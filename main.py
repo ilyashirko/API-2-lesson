@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 import requests
 
-load_dotenv()
 TOKEN = os.getenv('BITLINK_TOKEN')
+
 BITLY_HEADERS = {'Authorization': f'Bearer {TOKEN}'}
 
 
@@ -41,6 +41,7 @@ def is_bitlink(parsed_link):
 
 
 if __name__ == '__main__':
+    load_dotenv()
     parser = argparse.ArgumentParser(description='Программа сокращает ссылки и показывает количество переходов по сокращенным ссылкам')
     parser.add_argument('link', help='https://www.google.com')
     args = parser.parse_args()
