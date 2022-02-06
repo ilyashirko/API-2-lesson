@@ -46,7 +46,6 @@ if __name__ == '__main__':
     parser.add_argument('link', help='https://www.google.com')
     args = parser.parse_args()
     link = args.link
-    #link = input('Введите url для сокращения (напр. https://www.google.com): ')
     if is_bitlink(urlparse(link)):
         try:
             clicks = count_click(urlparse(link))
