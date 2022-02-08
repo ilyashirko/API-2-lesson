@@ -8,31 +8,31 @@ import requests
 from dotenv import load_dotenv
 
 
-def shorten_link(entered_link, BITLY_HEADERS):
+def shorten_link(entered_link, bitly_headers):
     response = requests.post(
         url='https://api-ssl.bitly.com/v4/bitlinks',
-        headers=BITLY_HEADERS,
+        headers=bitly_headers,
         json={'long_url': entered_link}
     )
     response.raise_for_status()
     return response.json()["id"]
     
 
-def count_click(parced_bitlink, BITLY_HEADERS):
+def count_click(parced_bitlink, bitly_headers):
     bitlink = f'{parced_bitlink.netloc}{parced_bitlink.path}'
     response = requests.get(
         url=f'https://api-ssl.bitly.com/v4/bitlinks/{bitlink}/clicks/summary',
-        headers=BITLY_HEADERS
+        headers=bitly_headers
     )
     response.raise_for_status()
     return response.json()["total_clicks"]
 
 
-def is_bitlink(parsed_link, BITLY_HEADERS):
+def is_bitlink(parsed_link, bitly_headers):
     link = f'{parsed_link.netloc}{parsed_link.path}'
     response = requests.get(
         url=f'https://api-ssl.bitly.com/v4/bitlinks/{link}',
-        headers=BITLY_HEADERS
+        headers=bitly_headers
     )
     return response.ok
 
