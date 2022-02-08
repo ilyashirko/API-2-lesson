@@ -1,26 +1,24 @@
 # Clipping links with bit.ly
-Generates short links bit.ly and counts the number of clicks on such links
+Generates short links [bit.ly/](https://bitly.com/) and counts the number of clicks on such links
 
 ## How to install
 ### You will need a token to work.
-You can get it here:
->https://app.bitly.com/settings/api/
+You can get it [here](https://app.bitly.com/settings/api/).  
 
-Register, enter a password and click "Generate token"
-The token looks something like this: 
->"3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b"
+Register, enter a password and click "Generate token"  
+The token looks something like this:  
+```3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b```  
 
-It must be placed in the ".env" file after the "=" sign
-It should turn out like this:
->BITLINK_TOKEN=3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b
+You need to create a file ```.env``` in the root folder of the project and place the token in it in the format:   
+```BITLINK_TOKEN=3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b```  
 
 ### Installing dependencies.
 You will need python3 and pip (pip3).
-> pip3 install -r requirement.txt
+```pip3 install -r requirement.txt```  
 
 ## How to start
-instead of LINK, enter a link in the format "http://www.google.com"
->$python3 main.py LINK
+instead of LINK, enter a link in the format (http://www.google.com)  
+```$python3 main.py LINK```  
 
 
 # Description of main.py functions
