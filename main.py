@@ -40,23 +40,23 @@ def is_bitlink(parsed_link, BITLY_HEADERS):
 if __name__ == '__main__':
     load_dotenv()
     
-    TOKEN = os.getenv('BITLINK_TOKEN')
+    token = os.getenv('BITLINK_TOKEN')
 
-    BITLY_HEADERS = {'Authorization': f'Bearer {TOKEN}'}
+    bitly_headers = {'Authorization': f'Bearer {token}'}
 
     parser = argparse.ArgumentParser(description='Программа сокращает ссылки и показывает количество переходов по сокращенным ссылкам')
     parser.add_argument('link', help='https://www.google.com')
     args = parser.parse_args()
     link = args.link
-    if is_bitlink(urlparse(link), BITLY_HEADERS):
+    if is_bitlink(urlparse(link), bitly_headers):
         try:
-            clicks = count_click(urlparse(link), BITLY_HEADERS)
+            clicks = count_click(urlparse(link), bitly_headers)
             print(f'Количество переходов: {clicks}')
         except requests.exceptions.HTTPError as error:
             exit('Сервер не отвечает:\n{0}'.format(error))
     else:
         try:
-            bitlink = shorten_link(link, BITLY_HEADERS)
+            bitlink = shorten_link(link, bitly_headers)
             print(f'Битлинк: {bitlink}')
         except requests.exceptions.HTTPError as error:
             exit('ОШИБКА: Неверный формат ссылки, либо не отвечает сервер:\n{0}'.format(error))
