@@ -6,20 +6,20 @@
 Получить его можно [здесь](https://app.bitly.com/settings/api/).  
 
 Регистрируетесь, вводите пароль и нажимаете "Сгенерировать токен"  
-Токен выглядит примерно так: 
-'''3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b'''  
+Токен выглядит примерно так:  
+```3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b```  
 
 Его необходимо поместить в файл ".env" после знака "="  
 Должно получиться так:  
-'''BITLINK_TOKEN=3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b'''  
+```BITLINK_TOKEN=3ig534hv53uv5ih4gjh34gb5jh3bjhb345b3j5b```  
 
 ### Установка зависимостей.
 Вам потребуется python3 и pip (pip3).
-'''pip3 install -r requirement.txt'''
+```pip3 install -r requirement.txt```  
 
 ## Как запустить
-вместо ССЫЛКА вводите ссылку в формате "(http://www.google.com)"
-'''$python3 main.py ССЫЛКА'''
+вместо ССЫЛКА вводите ссылку в формате "(http://www.google.com)"  
+```$python3 main.py ССЫЛКА```  
 
 
 # Описание функций main.py
